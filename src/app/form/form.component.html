@@ -1,0 +1,58 @@
+<form class="box" noValidate>
+  <div class="field">
+    <label for="navn" class="label">
+      Navn
+    </label>
+    <div class="control has-icons-left">
+      <input
+        type="text"
+        name="navn"
+        class="input is-danger"
+        required
+      />
+      <span class="icon is-small is-left">
+        <i class="fa fa-user"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="tlf" class="label">
+      Telefonnummer
+    </label>
+    <div class="control has-icons-left">
+      <input
+        type="tel"
+        name="tlf"
+        class="input is-danger"
+        required
+      />
+      <span class="icon is-small is-left">
+        <i class="fa fa-phone"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          name="jegErEnig"
+          required
+        />
+        &nbsp;Jeg lyver ikke
+      </label>
+    </div>
+  </div>
+
+  <div class="field">
+    <button
+      class="button is-primary"
+      type="submit"
+      disabled
+    >
+      OK
+    </button>
+  </div>
+</form>
