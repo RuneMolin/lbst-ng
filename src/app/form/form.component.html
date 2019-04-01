@@ -1,4 +1,4 @@
-<form class="box" noValidate>
+<form class="box" [formGroup]="demoForm">
   <div class="field">
     <label for="navn" class="label">
       Navn
@@ -7,8 +7,12 @@
       <input
         type="text"
         name="navn"
-        class="input is-danger"
-        required
+        [ngClass]="{
+          'input': true,
+          'is-danger': navn.invalid,
+          'is-success': !navn.invalid
+        }"
+        formControlName="navn"
       />
       <span class="icon is-small is-left">
         <i class="fa fa-user"></i>
@@ -24,8 +28,12 @@
       <input
         type="tel"
         name="tlf"
-        class="input is-danger"
-        required
+        [ngClass]="{
+          'input': true,
+          'is-danger': tlf.invalid,
+          'is-success': !tlf.invalid
+        }"
+        formControlName="tlf"
       />
       <span class="icon is-small is-left">
         <i class="fa fa-phone"></i>
@@ -39,7 +47,7 @@
         <input
           type="checkbox"
           name="jegErEnig"
-          required
+          formControlName="jegErEnig"
         />
         &nbsp;Jeg lyver ikke
       </label>
@@ -50,7 +58,7 @@
     <button
       class="button is-primary"
       type="submit"
-      disabled
+      [disabled]="!demoForm.valid"
     >
       OK
     </button>
