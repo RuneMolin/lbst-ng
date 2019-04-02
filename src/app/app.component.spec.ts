@@ -1,11 +1,17 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FormComponent } from './form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        ReactiveFormsModule
+      ],
       declarations: [
-        AppComponent
+        AppComponent,
+        FormComponent,
       ],
     }).compileComponents();
   }));
@@ -16,16 +22,12 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'lbst-ng'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('lbst-ng');
-  });
 
-  it('should render title in a h1 tag', () => {
+  it('should render titles', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to lbst-ng!');
+    expect(compiled.querySelector('h1').textContent).toContain('Indtast navn og telefonnummer');
+    expect(compiled.querySelector('h2').textContent).toContain('Angular version');
   });
 });
